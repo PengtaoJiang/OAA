@@ -26,7 +26,7 @@ make all -j4 && make pycaffe
 Please refer to https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X.  
 Download the `VOCdevkit.tar.gz` file and extract the voc data into `data/` folder.
 
-#### 3. Train the classification network for accumulating attention
+#### 4. Train the classification network for accumulating attention
 ```
 cd examples/oaa/
 ./train.sh exp1 0
@@ -52,5 +52,11 @@ The attention maps can be obtained from the integral attention model by
 ```
 python eval.py 30000 0
 ```
+#### 5. Train the Deeplab-LargeFOV network
+We provide two Deeplab-LargeFOV versions, which are based on VGG16(`examples/seg/exp1`) and ResNet101(`examples/seg/exp2`), respectively. After generating proxy segmentation labels, put them into `data/VOCdevkit/VOC2012/`.  
+```
+cd examples/seg/exp1/
+```
+Adjust the training list `train_ins.txt` for matching your path of proxy 
 
 
