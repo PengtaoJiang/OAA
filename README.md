@@ -31,14 +31,19 @@ Download the `VOCdevkit.tar.gz` file and extract the voc data into `data/` folde
 cd examples/oaa/
 ./train.sh exp1 0
 ```
-After the online attention accumulation process is finished, you can resize the cumulative attention maps to the size of original images by
+After the process of OAA is finished, you can resize the cumulative attention maps to the size of original images by
 ```
 cd exp1/
 python res.py
 ```
 (optional) After OAA, you can train a integral attention model to further improve the quality of OAA.   
 ```
+cd examples/oaa/
 ./train.sh exp2 0
+```
+The inferenced attention maps can be obtained by
+```
+python eval.py 30000 0
 ```
 
 
