@@ -41,7 +41,7 @@ python res.py
 cd examples/oaa/
 ./train.sh exp2 0
 ```
-The inferenced attention maps can be obtained by
+The attention maps can be obtained from the integral attention model by
 ```
 python eval.py 30000 0
 ```
