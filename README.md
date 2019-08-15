@@ -36,7 +36,14 @@ After the process of OAA is finished, you can resize the cumulative attention ma
 cd exp1/
 python res.py
 ```
-(optional) After OAA, you can train a integral attention model to further improve the quality of OAA.   
+(optional) After OAA, you can train a integral attention model to further improve the quality of OAA. You need to perform serveal steps:
+First, construct the pixel-level supervision from cumulative attention maps.
+```
+cd exp1/
+python res1.py
+python eval.py 30000 0
+```
+Once you generate the pixel-level supervision, train the integral attention model 
 ```
 cd examples/oaa/
 ./train.sh exp2 0
