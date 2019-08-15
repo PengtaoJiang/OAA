@@ -77,7 +77,11 @@ Move the code the `examples/seg/`, then uncomment line `175` and line `176` in `
 The crf parameters are in `examples/seg/utils.py`.
 
 ### Pre-computed Results
-
+We provide the pre-trained models, pre-computed attention maps and saliency maps for:
+- The pre-trained segmentation models. [Link] 
+- The pre-computed attention maps for OAA and OAA+. [Link] 
+- The saliency maps used for proxy labels. [Link]
+- The pre-trained integral attention model. [Link]
 
 ### Citation
 If you use these codes and models in your research, please cite:
