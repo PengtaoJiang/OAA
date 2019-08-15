@@ -23,11 +23,22 @@ cd OAA/
 make all -j4 && make pycaffe
 ```
 #### 3. Download VOC 2012 dataset
-```
+Please refer to https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X.  
+Download the `VOCdevkit.tar.gz` file and extract the voc data into `data/` folder.
 
-```
-#### 3. training for accumulating attention
+#### 3. Train the classification network for accumulating attention
 ```
 cd examples/oaa/
 ./train.sh exp1 0
 ```
+After the online attention accumulation process is finished, you can resize the cumulative attention maps to the size of original images by
+```
+cd exp1/
+python res.py
+```
+(optional) After OAA, you can train a integral attention model to further improve the quality of OAA.   
+```
+./train.sh exp2 0
+```
+
+
