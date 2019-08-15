@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
 
     atten_path = 'memory1a'
-    save_path = 'memory1a_ori'
+    save_path = 'memory1ar'
 
     if not exists(save_path):
         os.mkdir(save_path)
@@ -57,7 +57,7 @@ if __name__ == '__main__':
             max_value = np.max(att)
             att = (att - min_value) / (max_value - min_value + 1e-8)
             att = np.array(att*255, dtype = np.uint8)
-            att = cv2.resize(att, (width, height), interpolation=cv2.INTER_CUBIC)
+            #att = cv2.resize(att, (width, height), interpolation=cv2.INTER_CUBIC)
             save_name = '{}/{}_{}.png'.format(save_path, im_lst[i], label)
             cv2.imwrite(save_name, att)
 

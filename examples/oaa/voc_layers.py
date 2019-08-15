@@ -308,8 +308,8 @@ class VOCData1Layer(caffe.Layer):
     def setup(self, bottom, top):
         # config
         self.voc_dir = '../../data/VOCdevkit/VOC2012/JPEGImages/'
-        self.att_dir = '/media/miao/ptsdisk/memory2/exp8/memory8ar'
-        self.att_model_dir = '/media/miao/ptsdisk/memory2/exp8/atten_model'
+        self.att_dir = './exp1/memory1ar'
+        self.att_model_dir = './exp1/atten_model/'
         self.split = 'train'
         self.mean = np.array((104.007, 116.669, 122.679))
         self.random = True
@@ -389,6 +389,7 @@ class VOCData1Layer(caffe.Layer):
         """
         tmp_name = '{}/{}_{}.png'.format(self.att_dir, idx, self.indices[self.idx].split()[1])
         if not os.path.exists(tmp_name):
+            print 'hahah'
             tmp_name = '{}/{}_{}.png'.format(self.att_model_dir, idx, self.indices[self.idx].split()[1])
         tmp = Image.open(tmp_name)
         tmp = np.array(tmp, dtype=np.float32)
@@ -401,6 +402,7 @@ class VOCData1Layer(caffe.Layer):
                 att_name = '{}/{}_{}.png'.format(self.att_model_dir, idx, la)
             att = Image.open(att_name)
             att_ = np.array(att, dtype=np.float32) / 255.0
+
             if self.flip == 1:
 		att_  = att_[:, ::-1]
             atts[la, :, :] = att_
