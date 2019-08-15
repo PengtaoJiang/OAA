@@ -1,20 +1,20 @@
 # Online Attention Accumulation
-This work is finished by [Peng-Tao Jiang](pengtaojiang.github.io), [Qibin Hou](http://mmcheng.net/qbhou/), [Yang Cao](https://mmcheng.net/ycao), [Ming-Ming Cheng](https://mmcheng.net/cmm/), [Yunchao Wei](https://weiyc.github.io/), [Hongkai Xiong](http://min.sjtu.edu.cn/xhk.htm).
 This repository contains the original code and the links for data and pretrained models. If you have any questions about our paper "Integral Object Mining via Online Attention Accumulation", please feel free to contact me (pt.jiang AT mail DOT nankai.edu.cn).
 
 ### Table of Contents
 1. [Citation](#citation)
 2. [Installation](#installation)
-3. [Results](#results)
-4. [Pytorch re-implementations](#pytorch-re-implementations)
+4. [](#results)
+5. [Results](#results)
+6. [Pytorch re-implementations](#pytorch-re-implementations)
 ### Citation
 If you use these codes and models in your research, please cite:
 
 ### Installation
 #### 1. Dependence
-  ubuntu 16.04  
-  python 2.7  
-  [caffe dependence](https://caffe.berkeleyvision.org/install_apt.html)
+  - ubuntu 16.04  
+  - python 2.7  
+  - [caffe dependence](https://caffe.berkeleyvision.org/install_apt.html)
 
 #### 2. Compilie caffe
 ```
@@ -22,10 +22,14 @@ git clone https://github.com/PengtaoJiang/OAA.git
 cd OAA/
 make all -j4 && make pycaffe
 ```
-#### 3. Download VOC 2012 dataset
-Please refer to https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X.  
-Download the `VOCdevkit.tar.gz` file and extract the voc data into `data/` folder.
-
+#### 3. Download VOC2012 dataset and init models
+##### dataset
+Please refer to .  
+Download the [VOCdevkit.tar.gz](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) file and extract the voc data into `data/` folder.
+##### init models
+Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the classfication network. Move it to `examples/oaa`.  
+Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the VGG-based DeepLab-LargeFOV network. Move it to `examples/seg`.  
+Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the ResNet-based DeepLab-LargeFOV network. Move it to `examples/seg`.
 #### 4. Train the classification network for accumulating attention
 ```
 cd examples/oaa/
@@ -68,6 +72,9 @@ python eval.py 15000 0 exp1
 ```
 If you want to use crf to smooth the segmentation results, you can download the crf code from [this link](https://github.com/Andrew-Qibin/dss_crf).
 Move the code the `examples/seg/`, then uncomment line `175` and line `176` in `examples/seg/eval.py`.
+The crf parameters are in `examples/seg/utils.py`.
+
+### Pre-computed Results
 
 
 
