@@ -2,18 +2,16 @@
 This repository contains the original code and the links for data and pretrained models. If you have any questions about our paper "Integral Object Mining via Online Attention Accumulation", please feel free to contact me (pt.jiang AT mail DOT nankai.edu.cn).
 
 ### Table of Contents
-1. [Citation](#citation)
-2. [Installation](#installation)
-4. [](#results)
-5. [Results](#results)
-6. [Pytorch re-implementations](#pytorch-re-implementations)
-### Citation
-If you use these codes and models in your research, please cite:
+1. [Installation](#installation)
+2. [Implementation](#results)
+3. [Results](#results)
+4. [Pytorch re-implementations](#pytorch-re-implementations)
+5. [Citation](#citation)
 
 ### Installation
-#### 1. Dependence
+#### 1. Prerequisites
   - ubuntu 16.04  
-  - python 2.7  
+  - python 2.7 or python 3.x (adjust `print` function in `*.py`)
   - [caffe dependence](https://caffe.berkeleyvision.org/install_apt.html)
 
 #### 2. Compilie caffe
@@ -30,7 +28,10 @@ Download the [VOCdevkit.tar.gz](https://drive.google.com/open?id=1uh5bWXvLOpE-WZ
 Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the classfication network. Move it to `examples/oaa`.  
 Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the VGG-based DeepLab-LargeFOV network. Move it to `examples/seg`.  
 Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the ResNet-based DeepLab-LargeFOV network. Move it to `examples/seg`.
-#### 4. Train the classification network for accumulating attention
+
+### Implementation
+#### 1. Attention Generation
+First, train the classification network for accumulating attention,
 ```
 cd examples/oaa/
 ./train.sh exp1 0
@@ -56,7 +57,7 @@ The attention maps can be obtained from the integral attention model by
 ```
 python eval.py 30000 0
 ```
-#### 5. Train the Deeplab-LargeFOV network
+#### 2. Segmentation 
 We provide two Deeplab-LargeFOV versions, which are based on VGG16(`examples/seg/exp1`) and ResNet101(`examples/seg/exp2`), respectively. After generating proxy segmentation labels, put them into `data/VOCdevkit/VOC2012/`.  
 ```
 cd examples/seg/exp1/
@@ -77,4 +78,5 @@ The crf parameters are in `examples/seg/utils.py`.
 ### Pre-computed Results
 
 
-
+### Citation
+If you use these codes and models in your research, please cite:
