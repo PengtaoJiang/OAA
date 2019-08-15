@@ -4,7 +4,7 @@ This repository contains the original code and the links for data and pretrained
 ### Table of Contents
 1. [Installation](#installation)
 2. [Implementation](#results)
-3. [Results](#results)
+3. [Pre-computed results](#results)
 4. [Citation](#citation)
 5. [Pytorch re-implementations](#pytorch-re-implementations)
 
@@ -78,10 +78,13 @@ The crf parameters are in `examples/seg/utils.py`.
 
 ### Pre-computed Results
 We provide the pre-trained models, pre-computed attention maps and saliency maps for:
-- The pre-trained segmentation models. [Link] 
-- The pre-computed attention maps for OAA and OAA+. [Link] 
-- The saliency maps used for proxy labels. [Link]
-- The pre-trained integral attention model. [Link]
+- The pre-trained segmentation models. [link] 
+- The pre-computed attention maps for OAA and OAA+. [link] 
+- The saliency maps used for proxy labels. [link]
+- The pre-trained integral attention model. [link]
 
 ### Citation
 If you use these codes and models in your research, please cite:
+
+### Pytorch Re-implementations
+The pytorch code is coming soon~~~~~~~~~~~~~^v^~~~~~~~~~~~~~~
