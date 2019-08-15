@@ -5,8 +5,8 @@ This repository contains the original code and the links for data and pretrained
 1. [Installation](#installation)
 2. [Implementation](#results)
 3. [Results](#results)
-4. [Pytorch re-implementations](#pytorch-re-implementations)
-5. [Citation](#citation)
+4. [Citation](#citation)
+5. [Pytorch re-implementations](#pytorch-re-implementations)
 
 ### Installation
 #### 1. Prerequisites
@@ -21,15 +21,15 @@ cd OAA/
 make all -j4 && make pycaffe
 ```
 #### 3. Download VOC2012 dataset and init models
-##### dataset
-Please refer to .  
+##### Dataset
 Download the [VOCdevkit.tar.gz](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) file and extract the voc data into `data/` folder.
-##### init models
+##### Init models
 Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the classfication network. Move it to `examples/oaa`.  
 Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the VGG-based DeepLab-LargeFOV network. Move it to `examples/seg`.  
 Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the ResNet-based DeepLab-LargeFOV network. Move it to `examples/seg`.
 
 ### Implementation
+
 #### 1. Attention Generation
 First, train the classification network for accumulating attention,
 ```
@@ -58,6 +58,7 @@ The attention maps can be obtained from the integral attention model by
 python eval.py 30000 0
 ```
 #### 2. Segmentation 
+
 We provide two Deeplab-LargeFOV versions, which are based on VGG16(`examples/seg/exp1`) and ResNet101(`examples/seg/exp2`), respectively. After generating proxy segmentation labels, put them into `data/VOCdevkit/VOC2012/`.  
 ```
 cd examples/seg/exp1/
@@ -67,7 +68,7 @@ Adjust the training list `train_ins.txt` for matching your path of proxy segment
 cd examples/seg/
 ./train.sh exp1 0
 ```
-#### 6. Inference from the Deeplab-LargeFOV network
+After training, the segmentation results can be inferenced from the trained segmentation models,
 ```
 python eval.py 15000 0 exp1
 ```
