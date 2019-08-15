@@ -57,6 +57,17 @@ We provide two Deeplab-LargeFOV versions, which are based on VGG16(`examples/seg
 ```
 cd examples/seg/exp1/
 ```
-Adjust the training list `train_ins.txt` for matching your path of proxy 
+Adjust the training list `train_ins.txt` for matching your path of proxy segmentation labels, then train the segmentation network.
+```
+cd examples/seg/
+./train.sh exp1 0
+```
+#### 6. Inference from the Deeplab-LargeFOV network
+```
+python eval.py 15000 0 exp1
+```
+If you want to use crf to smooth the segmentation results, you can download the crf code from [this link](https://github.com/Andrew-Qibin/dss_crf).
+Move the code the `examples/seg/`, then uncomment line `175` and line `176` in `examples/seg/eval.py`.
+
 
 
