@@ -63,12 +63,13 @@ We provide two Deeplab-LargeFOV versions, which are based on VGG16(`examples/seg
 ```
 cd examples/seg/exp1/
 ```
-Adjust the training list `train_ins.txt` for matching your path of proxy segmentation labels, then train the segmentation network.
+adjust the training list `train_ins.txt`
+train
 ```
 cd examples/seg/
 ./train.sh exp1 0
 ```
-After training, the segmentation results can be inferenced from the trained segmentation models,
+test
 ```
 python eval.py 15000 0 exp1
 ```
