@@ -42,20 +42,21 @@ cd exp1/
 python res.py
 ```
 (optional) After OAA, you can train a integral attention model to further improve the quality of OAA.  
-You need to perform serveal steps:
+You need to perform serveal steps:  
 First, construct the pixel-level supervision from cumulative attention maps.
 ```
 cd exp1/
 python res1.py
 python eval.py 30000 0
 ```
-Once you generate the pixel-level supervision, train the integral attention model 
+Train the integral attention model,
 ```
 cd examples/oaa/
 ./train.sh exp2 0
 ```
 The attention maps can be obtained from the integral attention model by
 ```
+cd examples/oaa/exp2/
 python eval.py 30000 0
 ```
 #### 2. Segmentation 
