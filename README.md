@@ -36,25 +36,26 @@ First, train the classification network for accumulating attention,
 cd examples/oaa/
 ./train.sh exp1 0
 ```
-After the process of OAA is finished, you can resize the cumulative attention maps to the size of original images by
+After OAA is finished, you can resize the cumulative attention maps to the size of original images by
 ```
 cd exp1/
 python res.py
 ```
-(optional) After OAA, you can train a integral attention model to further improve the quality of OAA.  
+(optional)   
+After OAA, you can train a integral attention model to further improve the quality of OAA.  
 You need to perform serveal steps:  
-First, construct the pixel-level supervision from cumulative attention maps.
+First, rename the cumulative attention maps,
 ```
 cd exp1/
 python res1.py
 python eval.py 30000 0
 ```
-Train the integral attention model,
+Second, train the integral attention model,
 ```
 cd examples/oaa/
 ./train.sh exp2 0
 ```
-The attention maps can be obtained from the integral attention model by
+Third, generate attention maps from the integral attention model,
 ```
 cd examples/oaa/exp2/
 python eval.py 30000 0
