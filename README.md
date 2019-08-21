@@ -20,7 +20,7 @@ git clone https://github.com/PengtaoJiang/OAA.git
 cd OAA/
 make all -j4 && make pycaffe
 ```
-#### 3. Download VOC2012 dataset and init models
+#### 3. Download
 ##### Dataset
 Download the [VOCdevkit.tar.gz](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) file and extract the voc data into `data/` folder.
 ##### Init models
@@ -79,7 +79,7 @@ The crf parameters are in `examples/seg/utils.py`.
 ### Pre-computed Results
 We provide the pre-trained models, pre-computed attention maps and saliency maps for:
 - The pre-trained segmentation models. [link] 
-- The pre-computed attention maps for OAA and OAA+. [link] 
+- The pre-computed attention maps for OAA [link](https://drive.google.com/open?id=1jK6VD8rkCm_rJxe_G6hN-gemIbjI91wj).
 - The saliency maps used for proxy labels. [link]
 - The pre-trained integral attention model. [link]
 
