@@ -42,7 +42,7 @@ cd exp1/
 python res.py
 ```
 (optional)   
-After OAA, you can train a integral attention model to further improve the quality of OAA.  
+After OAA, you can train an integral attention model.  
 You need to perform serveal steps:  
 First, rename the cumulative attention maps,
 ```
