@@ -79,8 +79,8 @@ The crf parameters are in `examples/seg/utils.py`.
 ### Pre-computed Results
 We provide the pre-trained models, pre-computed attention maps and saliency maps for:
 - The pre-trained segmentation models. [link] 
-- The pre-computed attention maps for OAA [link](https://drive.google.com/open?id=1jK6VD8rkCm_rJxe_G6hN-gemIbjI91wj).
-- The saliency maps used for proxy labels. [link]
+- The pre-computed attention maps for [OAA](https://drive.google.com/open?id=1jK6VD8rkCm_rJxe_G6hN-gemIbjI91wj) and [OAA+](https://drive.google.com/open?id=1LqCLwENO1nGzCTuzbovpqpEec2C1TiO5).
+- The saliency maps used for proxy labels. [[link]](https://drive.google.com/open?id=1Ls2HBtg3jUiuk3WUuMtdUOVUFCgvE8IX)
 - The pre-trained integral attention model. [link]
 
 ### Citation
