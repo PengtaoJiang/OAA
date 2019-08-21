@@ -60,7 +60,7 @@ python eval.py 30000 0
 ```
 #### 2. Segmentation 
 
-We provide two Deeplab-LargeFOV versions, VGG16(`examples/seg/exp1`) and ResNet101(`examples/seg/exp2`), respectively.   
+We provide two Deeplab-LargeFOV versions, VGG16(`examples/seg/exp1`) and ResNet101(`examples/seg/exp2`).   
 After generating proxy labels, put them into `data/VOCdevkit/VOC2012/`.  
 Adjust the training list `train_ins.txt`,
 ```
