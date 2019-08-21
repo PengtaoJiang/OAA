@@ -41,7 +41,8 @@ After the process of OAA is finished, you can resize the cumulative attention ma
 cd exp1/
 python res.py
 ```
-(optional) After OAA, you can train a integral attention model to further improve the quality of OAA. You need to perform serveal steps:
+(optional) After OAA, you can train a integral attention model to further improve the quality of OAA.  
+You need to perform serveal steps:
 First, construct the pixel-level supervision from cumulative attention maps.
 ```
 cd exp1/
@@ -59,22 +60,22 @@ python eval.py 30000 0
 ```
 #### 2. Segmentation 
 
-We provide two Deeplab-LargeFOV versions, which are based on VGG16(`examples/seg/exp1`) and ResNet101(`examples/seg/exp2`), respectively. After generating proxy segmentation labels, put them into `data/VOCdevkit/VOC2012/`.  
+We provide two Deeplab-LargeFOV versions, VGG16(`examples/seg/exp1`) and ResNet101(`examples/seg/exp2`), respectively.   
+After generating proxy segmentation labels, put them into `data/VOCdevkit/VOC2012/`.  
 ```
 cd examples/seg/exp1/
 ```
-adjust the training list `train_ins.txt`
-train
+Adjust the training list `train_ins.txt` and then train
 ```
 cd examples/seg/
 ./train.sh exp1 0
 ```
-test
+Test
 ```
 python eval.py 15000 0 exp1
 ```
-If you want to use crf to smooth the segmentation results, you can download the crf code from [this link](https://github.com/Andrew-Qibin/dss_crf).
-Move the code the `examples/seg/`, then uncomment line `175` and line `176` in `examples/seg/eval.py`.
+If you want to use crf to smooth the segmentation results, you can download the crf code from [this link](https://github.com/Andrew-Qibin/dss_crf).  
+Move the code the `examples/seg/`, then uncomment line `175 and 176` in `examples/seg/eval.py`.  
 The crf parameters are in `examples/seg/utils.py`.
 
 ### Pre-computed Results
