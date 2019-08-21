@@ -65,6 +65,7 @@ After generating proxy labels, put them into `data/VOCdevkit/VOC2012/`.
 Adjust the training list `train_ins.txt`,
 ```
 cd examples/seg/exp1/
+vim train_ins.txt
 ```
 Train
 ```
