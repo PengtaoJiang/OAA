@@ -1,5 +1,5 @@
 # Online Attention Accumulation
-This repository contains the original code and the links for data and pretrained models. Please see our [Project Home](http://mmcheng.net/oaa/) for more details. If you have any questions about our paper ["Integral Object Mining via Online Attention Accumulation"](http://mftp.mmcheng.net/Papers/19ICCV_OAA.pdf), please feel free to contact me (pt.jiang AT mail DOT nankai.edu.cn).
+This repository contains the original code and the links for data and pretrained models. Please see our [Project Home](http://mmcheng.net/oaa/) for more details. If you have any questions about our paper ["Integral Object Mining via Online Attention Accumulation"](http://mftp.mmcheng.net/Papers/19ICCV_OAA.pdf), please feel free to contact [Me](https://pengtaojiang.github.io/) (pt.jiang AT mail DOT nankai.edu.cn).
 
 ### Table of Contents
 1. [Installation](#installation)
