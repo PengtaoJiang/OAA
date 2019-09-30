@@ -24,9 +24,9 @@ make all -j4 && make pycaffe
 ##### Dataset
 Download the [VOCdevkit.tar.gz](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) file and extract the voc data into `data/` folder.
 ##### Init models
-Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the classfication network. Move it to `examples/oaa`.  
-Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the VGG-based DeepLab-LargeFOV network. Move it to `examples/seg`.  
-Download [this model](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) for initializing the ResNet-based DeepLab-LargeFOV network. Move it to `examples/seg`.
+Download [this model](https://drive.google.com/open?id=10CZ28gOVLD1ul4ncqQa0CiSM9QGGpXfw) for initializing the classfication network. Move it to `examples/oaa`.  
+Download [this model](https://drive.google.com/open?id=1V5UDeJXkMueSZRodm76wMU0Hp6RNa3xo) for initializing the VGG-based DeepLab-LargeFOV network. Move it to `examples/seg`.  
+Download [this model](https://drive.google.com/open?id=19A0aQja3tDuh3GYpp1nFksdQ89CSUrd8) for initializing the ResNet-based DeepLab-LargeFOV network. Move it to `examples/seg`.
 
 ### Implementation
 
