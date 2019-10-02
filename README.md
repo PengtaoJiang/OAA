@@ -89,7 +89,7 @@ We provide the pre-trained models, pre-computed attention maps and saliency maps
 - The pre-computed attention maps for [OAA](https://drive.google.com/open?id=1jK6VD8rkCm_rJxe_G6hN-gemIbjI91wj) and [OAA+](https://drive.google.com/open?id=1LqCLwENO1nGzCTuzbovpqpEec2C1TiO5).
 - The saliency maps used for proxy labels. [[link]](https://drive.google.com/open?id=1Ls2HBtg3jUiuk3WUuMtdUOVUFCgvE8IX)
 - The pre-trained integral attention model. [link]
-
+- The code for generating proxy segmentation labels can be download from this [link](https://drive.google.com/open?id=1SHQQBLZ_rarEB54tfrYJ0JVhku5a82EU).
 ### Citation
 If you use these codes and models in your research, please cite:
 
