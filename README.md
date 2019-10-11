@@ -1,20 +1,19 @@
 # Online Attention Accumulation
-This work is finished by [Peng-Tao Jiang](pengtaojiang.github.io), [Qibin Hou](http://mmcheng.net/qbhou/), [Yang Cao](https://mmcheng.net/ycao), [Ming-Ming Cheng](https://mmcheng.net/cmm/), [Yunchao Wei](https://weiyc.github.io/), [Hongkai Xiong](http://min.sjtu.edu.cn/xhk.htm).
-This repository contains the original code and the links for data and pretrained models. If you have any questions about our paper "Integral Object Mining via Online Attention Accumulation", please feel free to contact me (pt.jiang AT mail DOT nankai.edu.cn).
+This repository contains the original code and the links for data and pretrained models. Please see our [Project Home](http://mmcheng.net/oaa/) for more details. If you have any questions about our paper ["Integral Object Mining via Online Attention Accumulation"](http://mftp.mmcheng.net/Papers/19ICCV_OAA.pdf), please feel free to contact [Me](https://pengtaojiang.github.io/) (pt.jiang AT mail DOT nankai.edu.cn).   
+The idea about online accumulation may be usful for other problems and questions. Hope our work will bring any usefulness into your project.
 
 ### Table of Contents
-1. [Citation](#citation)
-2. [Installation](#installation)
-3. [Results](#results)
-4. [Pytorch re-implementations](#pytorch-re-implementations)
-### Citation
-If you use these codes and models in your research, please cite:
+1. [Installation](#installation)
+2. [Implementation](#results)
+3. [Pre-computed results](#results)
+4. [Citation](#citation)
+5. [Pytorch re-implementations](#pytorch-re-implementations)
 
 ### Installation
-#### 1. Dependence
-  ubuntu 16.04  
-  python 2.7  
-  [caffe dependence](https://caffe.berkeleyvision.org/install_apt.html)
+#### 1. Prerequisites
+  - ubuntu 16.04  
+  - python 2.7 or python 3.x (adjust `print` function in `*.py`)
+  - [caffe dependence](https://caffe.berkeleyvision.org/install_apt.html)
 
 #### 2. Compilie caffe
 ```
@@ -22,35 +21,77 @@ git clone https://github.com/PengtaoJiang/OAA.git
 cd OAA/
 make all -j4 && make pycaffe
 ```
-#### 3. Download VOC 2012 dataset
-Please refer to https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X.  
-Download the `VOCdevkit.tar.gz` file and extract the voc data into `data/` folder.
+#### 3. Download
+##### Dataset
+Download the [VOCdevkit.tar.gz](https://drive.google.com/open?id=1uh5bWXvLOpE-WZUUtO77uwCB4Qnh6d7X) file and extract the voc data into `data/` folder.
+##### Init models
+Download [this model](https://drive.google.com/open?id=10CZ28gOVLD1ul4ncqQa0CiSM9QGGpXfw) for initializing the classfication network. Move it to `examples/oaa`.  
+Download [this model](https://drive.google.com/open?id=1V5UDeJXkMueSZRodm76wMU0Hp6RNa3xo) for initializing the VGG-based DeepLab-LargeFOV network. Move it to `examples/seg`.  
+Download [this model](https://drive.google.com/open?id=19A0aQja3tDuh3GYpp1nFksdQ89CSUrd8) for initializing the ResNet-based DeepLab-LargeFOV network. Move it to `examples/seg`.
 
-#### 3. Train the classification network for accumulating attention
+### Implementation
+
+#### 1. Attention Generation
+First, train the classification network for accumulating attention,
 ```
 cd examples/oaa/
 ./train.sh exp1 0
 ```
-After the process of OAA is finished, you can resize the cumulative attention maps to the size of original images by
+After OAA is finished, you can resize the cumulative attention maps to the size of original images by
 ```
 cd exp1/
 python res.py
 ```
-(optional) After OAA, you can train a integral attention model to further improve the quality of OAA. You need to perform serveal steps:
-First, construct the pixel-level supervision from cumulative attention maps.
+(optional)   
+After OAA, you can train an integral attention model.  
+You need to perform serveal steps:  
+First, rename the cumulative attention maps,
 ```
 cd exp1/
 python res1.py
 python eval.py 30000 0
 ```
-Once you generate the pixel-level supervision, train the integral attention model 
+Second, train the integral attention model,
 ```
 cd examples/oaa/
 ./train.sh exp2 0
 ```
-The attention maps can be obtained from the integral attention model by
+Third, generate attention maps from the integral attention model,
 ```
+cd examples/oaa/exp2/
 python eval.py 30000 0
 ```
+#### 2. Segmentation 
 
+We provide two Deeplab-LargeFOV versions, VGG16(`examples/seg/exp1`) and ResNet101(`examples/seg/exp2`).   
+After generating proxy labels, put them into `data/VOCdevkit/VOC2012/`.  
+Adjust the training list `train_ins.txt`,
+```
+cd examples/seg/exp1/
+vim train_ins.txt
+```
+Train
+```
+cd examples/seg/
+./train.sh exp1 0
+```
+Test
+```
+python eval.py 15000 0 exp1
+```
+If you want to use crf to smooth the segmentation results, you can download the crf code from [this link](https://github.com/Andrew-Qibin/dss_crf).  
+Move the code the `examples/seg/`, then uncomment line `175 and 176` in `examples/seg/eval.py`.  
+The crf parameters are in `examples/seg/utils.py`.
 
+### Pre-computed Results
+We provide the pre-trained models, pre-computed attention maps and saliency maps for:
+- The pre-trained segmentation models. [link] 
+- The pre-computed attention maps for [OAA](https://drive.google.com/open?id=1jK6VD8rkCm_rJxe_G6hN-gemIbjI91wj) and [OAA+](https://drive.google.com/open?id=1LqCLwENO1nGzCTuzbovpqpEec2C1TiO5).
+- The saliency maps used for proxy labels. [[link]](https://drive.google.com/open?id=1Ls2HBtg3jUiuk3WUuMtdUOVUFCgvE8IX)
+- The pre-trained integral attention model. [link]
+- The code for generating proxy segmentation labels can be download from this [link](https://drive.google.com/open?id=1SHQQBLZ_rarEB54tfrYJ0JVhku5a82EU).
+### Citation
+If you use these codes and models in your research, please cite:
+
+### Pytorch Re-implementations
+The pytorch code is coming soon~~~~~~~~~~~~~^v^~~~~~~~~~~~~~~
