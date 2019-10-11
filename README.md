@@ -80,7 +80,7 @@ Test
 python eval.py 15000 0 exp1
 ```
 If you want to use crf to smooth the segmentation results, you can download the crf code from [this link](https://github.com/Andrew-Qibin/dss_crf).  
-Move the code the `examples/seg/`, then uncomment line `175 and 176` in `examples/seg/eval.py`.  
+Move the code the `examples/seg/`, compile it. Then uncomment line `175 and 176` in `examples/seg/eval.py`.  
 The crf parameters are in `examples/seg/utils.py`.
 
 ### Pre-computed Results
