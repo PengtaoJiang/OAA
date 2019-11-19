@@ -1,5 +1,5 @@
 # Online Attention Accumulation
-This repository contains the original code and the links for data and pretrained models. Please see our [Project Home](http://mmcheng.net/oaa/) for more details. If you have any questions about our paper ["Integral Object Mining via Online Attention Accumulation"](http://mftp.mmcheng.net/Papers/19ICCV_OAA.pdf), please feel free to contact [Me](https://pengtaojiang.github.io/) (pt.jiang AT mail DOT nankai.edu.cn).   
+This repository contains the original code and the links for data and pretrained models. Please see our [Project Home](http://mmcheng.net/oaa/) for more details. If you have any questions about our paper ["Integral Object Mining via Online Attention Accumulation"](http://openaccess.thecvf.com/content_ICCV_2019/papers/Jiang_Integral_Object_Mining_via_Online_Attention_Accumulation_ICCV_2019_paper.pdf), please feel free to contact [Me](https://pengtaojiang.github.io/) (pt.jiang AT mail DOT nankai.edu.cn).   
 The idea about online accumulation may be usful for other problems and questions. Hope our work will bring any usefulness into your project.
 
 ### Table of Contents
@@ -80,16 +80,16 @@ Test
 python eval.py 15000 0 exp1
 ```
 If you want to use crf to smooth the segmentation results, you can download the crf code from [this link](https://github.com/Andrew-Qibin/dss_crf).  
-Move the code the `examples/seg/`, then uncomment line `175 and 176` in `examples/seg/eval.py`.  
+Move the code the `examples/seg/`, compile it. Then uncomment line `175 and 176` in `examples/seg/eval.py`.  
 The crf parameters are in `examples/seg/utils.py`.
 
 ### Pre-computed Results
 We provide the pre-trained models, pre-computed attention maps and saliency maps for:
-- The pre-trained segmentation models. [link] 
+- The pre-trained integral attention model. [[link]](https://drive.google.com/open?id=17dmrlqCbQvLsZ2BUC8PW8vnNZJRj7s-C).
 - The pre-computed attention maps for [OAA](https://drive.google.com/open?id=1jK6VD8rkCm_rJxe_G6hN-gemIbjI91wj) and [OAA+](https://drive.google.com/open?id=1LqCLwENO1nGzCTuzbovpqpEec2C1TiO5).
 - The saliency maps used for proxy labels. [[link]](https://drive.google.com/open?id=1Ls2HBtg3jUiuk3WUuMtdUOVUFCgvE8IX)
-- The pre-trained integral attention model. [link]
 - The code for generating proxy segmentation labels can be download from this [link](https://drive.google.com/open?id=1SHQQBLZ_rarEB54tfrYJ0JVhku5a82EU).
+- The pre-trained vgg16-based segmentation models for [OAA](https://drive.google.com/open?id=1yz-sXXA3Dw9NkXlO2iz7jbQkoxt4dgIL) and [OAA+](https://drive.google.com/open?id=1aZIX20SX2Y5_zoW2JoAEsGxs6_Hgx5CY). 
 ### Citation
 If you use these codes and models in your research, please cite:
 
