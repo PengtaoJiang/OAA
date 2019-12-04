@@ -104,5 +104,6 @@ If you use these codes and models in your research, please cite:
       author={Jiang, Peng-Tao and Hou, Qibin and Cao, Yang and Cheng, Ming-Ming and Wei, Yunchao and Xiong, Hong-Kai},   
       booktitle={Proceedings of the IEEE International Conference on Computer Vision},   
       pages={2070--2079},   
-      year={2019} }
+      year={2019} 
+}
 ```
