@@ -4,11 +4,19 @@ This repository contains the original code and the links for data and pretrained
 The idea about online accumulation may be usful for other problems and questions. Hope our work will bring any usefulness into your project.
 
 ### Table of Contents
-1. [Installation](#installation)
-2. [Implementation](#results)
-3. [Pre-computed results](#results)
-4. [Citation](#citation)
-5. [Pytorch re-implementations](#pytorch-re-implementations)
+1. [Pre-computed results](#results)
+2. [Pytorch re-implementations](#pytorch-re-implementations)
+3. [Installation](#installation)
+4. [Implementation](#results)
+5. [Citation](#citation)
+
+### Pre-computed Results
+We provide the pre-trained models, pre-computed attention maps and saliency maps for:
+- The pre-trained integral attention model. [[link]](https://drive.google.com/open?id=17dmrlqCbQvLsZ2BUC8PW8vnNZJRj7s-C).
+- The pre-computed attention maps for [OAA](https://drive.google.com/open?id=1jK6VD8rkCm_rJxe_G6hN-gemIbjI91wj) and [OAA+](https://drive.google.com/open?id=1LqCLwENO1nGzCTuzbovpqpEec2C1TiO5).
+- The saliency maps used for proxy labels. [[link]](https://drive.google.com/open?id=1Ls2HBtg3jUiuk3WUuMtdUOVUFCgvE8IX)
+- The code for generating proxy segmentation labels can be download from this [link](https://drive.google.com/open?id=1SHQQBLZ_rarEB54tfrYJ0JVhku5a82EU).
+- The pre-trained vgg16-based segmentation models for [OAA](https://drive.google.com/open?id=1yz-sXXA3Dw9NkXlO2iz7jbQkoxt4dgIL) and [OAA+](https://drive.google.com/open?id=1aZIX20SX2Y5_zoW2JoAEsGxs6_Hgx5CY). 
 
 ### Installation
 #### 1. Prerequisites
@@ -84,15 +92,8 @@ If you want to use crf to smooth the segmentation results, you can download the 
 Move the code the `examples/seg/`, compile it. Then uncomment line `175 and 176` in `examples/seg/eval.py`.  
 The crf parameters are in `examples/seg/utils.py`.
 
-### Pre-computed Results
-We provide the pre-trained models, pre-computed attention maps and saliency maps for:
-- The pre-trained integral attention model. [[link]](https://drive.google.com/open?id=17dmrlqCbQvLsZ2BUC8PW8vnNZJRj7s-C).
-- The pre-computed attention maps for [OAA](https://drive.google.com/open?id=1jK6VD8rkCm_rJxe_G6hN-gemIbjI91wj) and [OAA+](https://drive.google.com/open?id=1LqCLwENO1nGzCTuzbovpqpEec2C1TiO5).
-- The saliency maps used for proxy labels. [[link]](https://drive.google.com/open?id=1Ls2HBtg3jUiuk3WUuMtdUOVUFCgvE8IX)
-- The code for generating proxy segmentation labels can be download from this [link](https://drive.google.com/open?id=1SHQQBLZ_rarEB54tfrYJ0JVhku5a82EU).
-- The pre-trained vgg16-based segmentation models for [OAA](https://drive.google.com/open?id=1yz-sXXA3Dw9NkXlO2iz7jbQkoxt4dgIL) and [OAA+](https://drive.google.com/open?id=1aZIX20SX2Y5_zoW2JoAEsGxs6_Hgx5CY). 
-### Citation
-If you use these codes and models in your research, please cite:
-
 ### Pytorch Re-implementations
 The [pytorch code](https://github.com/PengtaoJiang/OAA-PyTorch) is coming.
+
+### Citation
+If you use these codes and models in your research, please cite:
