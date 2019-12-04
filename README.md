@@ -17,6 +17,7 @@ We provide the pre-trained models, pre-computed attention maps and saliency maps
 - The saliency maps used for proxy labels. [[link]](https://drive.google.com/open?id=1Ls2HBtg3jUiuk3WUuMtdUOVUFCgvE8IX)
 - The code for generating proxy segmentation labels can be download from this [link](https://drive.google.com/open?id=1SHQQBLZ_rarEB54tfrYJ0JVhku5a82EU).
 - The pre-trained vgg16-based segmentation models for [OAA](https://drive.google.com/open?id=1yz-sXXA3Dw9NkXlO2iz7jbQkoxt4dgIL) and [OAA+](https://drive.google.com/open?id=1aZIX20SX2Y5_zoW2JoAEsGxs6_Hgx5CY). 
+- CRF parameters: bi_w = 3, bi_xy_std = 67, bi_rgb_std = 4, pos_w = 1, pos_xy_std = 3.
 
 ### Installation
 #### 1. Prerequisites
