@@ -4,7 +4,7 @@ This repository contains the original code and the links for data and pretrained
 The idea about online accumulation may be usful for other problems and questions. Hope our work will bring any usefulness into your project.
 
 [![Watch the video](https://github.com/PengtaoJiang/OAA/blob/master/as.png)](https://www.bilibili.com/video/av94220878)
-[![Watch the video](https://github.com/PengtaoJiang/OAA/blob/master/as.png)](https://www.bilibili.com/video/av94221396)
+[![Watch the video](https://github.com/PengtaoJiang/OAA/blob/master/ac.png)](https://www.bilibili.com/video/av94221396)
 
 ### Table of Contents
 1. [Pre-computed results](#results)
