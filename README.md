@@ -98,8 +98,6 @@ If you want to use crf to smooth the segmentation results, you can download the 
 Move the code the `examples/seg/`, compile it. Then uncomment line `175 and 176` in `examples/seg/eval.py`.  
 The crf parameters are in `examples/seg/utils.py`.
 
-### Pytorch Re-implementations
-The [pytorch code](https://github.com/PengtaoJiang/OAA-PyTorch) is coming.
 
 ### Citation
 If you use these codes and models in your research, please cite:
