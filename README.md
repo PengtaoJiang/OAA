@@ -110,3 +110,6 @@ If you use these codes and models in your research, please cite:
       year={2019} 
 }
 ```
+
+###License
+The source code is free for research and education use only. Any comercial use should get formal permission first.
