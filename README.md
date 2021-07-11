@@ -109,6 +109,15 @@ If you use these codes and models in your research, please cite:
       year={2019} 
 }
 ```
+```
+@article{jiang2021online,
+  title={Online Attention Accumulation for Weakly Supervised Semantic Segmentation},
+  author={Jiang, Peng-Tao and Han, Ling-Hao and Hou, Qibin and Cheng, Ming-Ming and Wei, Yunchao},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2021},
+  publisher={IEEE}
+}
+```
 If you have any questions about our paper ["Integral Object Mining via Online Attention Accumulation"](http://openaccess.thecvf.com/content_ICCV_2019/papers/Jiang_Integral_Object_Mining_via_Online_Attention_Accumulation_ICCV_2019_paper.pdf), please feel free to contact [Me](https://pengtaojiang.github.io/) (pt.jiang AT mail DOT nankai.edu.cn).   
 
 ### License
