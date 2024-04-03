@@ -5,7 +5,7 @@ This code is based on the Caffe framework. Recently, I reimplement it using the 
 [![Watch the video](https://github.com/PengtaoJiang/OAA/blob/master/attention_shift.png)](https://www.bilibili.com/video/av94220878)
 ### Video to observe attention accumulation.
 [![Watch the video](https://github.com/PengtaoJiang/OAA/blob/master/attention_accumulation.png)](https://www.bilibili.com/video/av94221396)
-### Thanks to the contribution from Lin-Hao Han for this video.
+### Thanks to the contribution from Ling-Hao Han for this video.
 
 ### Table of Contents
 1. [Pre-computed results](#results)
